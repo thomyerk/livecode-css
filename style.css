@@ -1,16 +1,28 @@
 .container{
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns:repeat(5, 1fr);
     grid-template-areas: 
-        "nav-area"
-        "blog-area"
-        "footer-area"
+        "nav nav nav nav nav"
+        "blog blog blog blog sidebar"
+        "footer footer footer footer footer"
     ;
+}
+@media screen and (max-width: 800px) {
+    .container{
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-areas: 
+            "nav nav nav nav nav"
+            "sidebar sidebar sidebar sidebar sidebar"
+            "blog blog blog blog blog"
+            "footer footer footer footer footer"
+        ;
+    }
 }
 
 .nav-container{
-    grid-area: nav-area;
+    grid-area: nav;
 }
 
 .blog{
@@ -20,9 +32,12 @@
 
 .blog-container{
     display: flex;
-    grid-area: blog-area;
+    grid-area: blog;
 }
 
+.sidebar {
+    grid-area: sidebar;
+}
 .footer-container{
-    grid-area: footer-area;
+    grid-area: footer;
 }
